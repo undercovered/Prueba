@@ -1,0 +1,68 @@
+.button-image {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.small-image {
+    border:radius;
+    border-radius: 4px;
+    display: grid;
+    max-width: 300px;
+    max-height: 200px;
+}
+.image-original {
+    border:radius;
+    border-radius: 4px;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  opacity: 0;
+  color: rgb(61, 61, 61);
+
+}
+
+
+.button-image:hover {
+  transform: translateY(0) scale(1.2);
+  opacity: 0.5;
+  transition: 700ms;
+
+}
+
+.button-image:hover .text {
+  opacity: 1;
+  font-weight: 800;
+
+}
+
+.popup {
+  position: fixed;
+  display: table;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  z-index: 1;
+}
+.likes {
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+    padding-top: 3px;
+
+}
+.tags {
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    padding-top: 3px;
+
+}
+
+

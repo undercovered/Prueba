@@ -1,0 +1,44 @@
+<header class="container">
+  <h1 class="title">
+    Pixabay
+  </h1>
+</header>
+<hr>
+
+<main class="main-container fadeInUpBig">
+    <div class="container-search row">
+        <form autocomplete="off" [formGroup]="auxFormImage" (ngSubmit)="search()"
+        class="container-search">
+            <div class="row">
+              <div class="col text-box">
+                <input type="text" class="form-control" placeholder="Buscar imágenes" formControlName="tags">
+              </div>
+              <div class="col row">
+                <div class="col">
+                    <select class="form-select" aria-label="Default select example" formControlName="filter">
+                        <option value="">Seleccione Categoria</option>
+                        <option *ngFor="let category of this.categorys" [ngValue]="category">
+                          {{ category }}
+                        </option>
+                      </select>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary" type="submit">¡Buscar!</button>
+                  </div>
+              </div>
+              
+            </div>
+          </form>
+    </div>
+    <div class="container-images fadeInUpBigImages" *ngIf="searchValidator">
+        <div class="container">
+            <div class="grid-1">
+              <div class="item" 
+                    *ngFor="let searchResult of this.formImage">
+                    <app-image-modal [data]="searchResult">
+                    </app-image-modal>
+              </div>
+            </div>
+          </div>
+    </div>
+</main>
